@@ -44,7 +44,7 @@ section{
     max-width:1920px;
   }
   
-  .container-grants{
+  .container-hackjuno{
     max-width:1160px;
     width:100%;
     margin:auto;
@@ -136,7 +136,7 @@ section{
       }
     }
 
-    .container-grants{
+    .container-hackjuno{
       padding:200px 20px 1px;
 
       @include media-breakpoint-down(xxl){
@@ -159,6 +159,10 @@ section{
       @include media-breakpoint-down(md){
         padding-bottom:50px;
       }
+    }
+
+    .hacks-title{
+    padding-bottom: 50px;
     }
 
     .container{

@@ -3,11 +3,12 @@ import Layout from "../components/layout";
 import EcosystemVideoMov from "../videos/ecosystem-small.mp4";
 import EcosystemVideo from "../videos/ecosystem-small.webm";
 import EcosystemPoster from "../videos/ecosystem.png";
+import {StaticImage} from "gatsby-plugin-image";
 import {useState, useEffect} from "react";
 
 const menu = require('../contents/urls.json');
 
-const GrantsPage = () => {
+const HackJunoPage = () => {
     const [isSafari, setSafari] = useState(false)
     useEffect(() => {
         setSafari(/constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification)));
@@ -16,27 +17,24 @@ const GrantsPage = () => {
         <div className={'ecosystem-page'}>
             <Layout>
                 <section className={'hero-section'}>
-                    <div className={'container-grants'}>
-                        <div className={'video-container'}>
-                            <div className={'video-wrapper'}>
-                                <div className={'video-bg'}/>
-                                <video autoPlay={true} loop={true} preload={'none'} playsInline={true} muted={true} poster={EcosystemPoster}>
-                                    {isSafari &&
-                                        <source src={EcosystemVideoMov} type='video/mp4;codecs="hvc1"'/>
-                                    }
-                                    {!isSafari &&
-                                        <source src={EcosystemVideo} type="video/webm" />
-                                    }
-                                </video>
-                            </div>
-                        </div>
+                    <div className={'container-hackjuno'}>
                         <div className={'row'}>
-                            <div className={'col-12 col-sm-8 col-xl-5'}>
+                            <div className={'hacks-title col-12 col-sm-8 col-xl-6'}>
                                 <h1 data-sal="fade"
                                     data-sal-delay="200"
-                                    data-sal-duration="1000">Juno Grants
+                                    data-sal-duration="1000">Hack Juno
                                 </h1>
-
+                            </div>
+                            <div className={'image'} data-sal="fade"
+                                 data-sal-delay="400"
+                                 data-sal-duration="1000">
+                                <StaticImage
+                                    src={'../images/hackjuno.png'}
+                                    alt={'HackJuno'}
+                                    placeholder="blurred"
+                                />
+                            </div>
+                            <div className={'col-12 col-sm-8 col-xl-6'}>
                                 <div className={'text-box'} data-sal="fade"
                                      data-sal-delay="400"
                                      data-sal-duration="1000">
@@ -45,7 +43,7 @@ const GrantsPage = () => {
                                 <div className={'text-box'} data-sal="fade"
                                      data-sal-delay="400"
                                      data-sal-duration="1000">
-                                    Note that Hack Juno grants are separate and applications should follow the instructions <a className={'anchor-link'} target={'_blank'} rel={'noreferrer'} href='https://medium.com/hack-juno-dao/hack-juno-280670cd71b2'>here</a>
+                                    Note that Hack Juno HackJuno are separate and applications should follow the instructions <a className={'anchor-link'} target={'_blank'} rel={'noreferrer'} href='https://medium.com/hack-juno-dao/hack-juno-280670cd71b2'>here</a>
                                 </div>
                             </div>
                         </div>
@@ -63,4 +61,4 @@ const GrantsPage = () => {
     )
 }
 
-export default GrantsPage
+export default HackJunoPage
